@@ -17,9 +17,9 @@ export default function BoostrapNavbar() {
         <Nav>
           <Form  className='d-flex'>
             <Form.Control/>
-            <Button variant="outline-dark space-left" >Search</Button>
+            <Button variant="outline-dark space-left" >Buscar</Button>
           </Form>
-          <Nav.Link className='text-black' href="#home" >Home</Nav.Link>
+          <Nav.Link className='text-black' href="#home" >Inicio</Nav.Link>
           <Nav.Link className='text-black' href="/ofertas">Ofertas</Nav.Link>
           <Nav.Link className='text-black' href="/backoffice">Administración</Nav.Link>
           <Nav.Link><i className="bi bi-cart text-black size-[2rem]"></i></Nav.Link>          
