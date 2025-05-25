@@ -23,19 +23,19 @@ export default function BoostrapNavbar() {
       <Container fluid={true}>
         <Navbar.Brand style={{ width: '10rem' }}>
           <Link to="/">
-            <Card.Img src="./mercurio_sin_fondo.png" />
+            <Card.Img src="./mercurio_sin_fondo.png" style={{ width: '100%' }} /> 
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='navbar-collapse' />
         <Navbar.Collapse id='navbar-collapse' className='justify-content-end color-black'>
         <Nav>
           {/* busqueda()*/}
-          <Nav.Link as={Link} to="/" className='text-black'>Inicio</Nav.Link>
-          <Nav.Link as={Link} to="/ofertas" className='text-black'>Ofertas</Nav.Link>
-          <Nav.Link as={Link} to="/backoffice" className='text-black'>Administración</Nav.Link>
-          <Nav.Link as={Link} to="/login" className='text-black'>Iniciar sesion</Nav.Link>
+          <Nav.Link as={Link} to="/" className='botones-navbar'>Inicio</Nav.Link>
+          <Nav.Link as={Link} to="/ofertas" className='botones-navbar'>Ofertas</Nav.Link>
+          <Nav.Link as={Link} to="/backoffice" className='botones-navbar'>Administración</Nav.Link>
+          <Nav.Link as={Link} to="/login" className='botones-navbar'>Iniciar sesion</Nav.Link>
           <Nav.Link as={Link} to="/carrito" className="position-relative">
-            <i className="bi bi-cart text-black size-[2rem]"></i>
+            <i className="bi bi-cart botones-navbar size-[2rem]"></i>
             {itemCount > 0 && (
               <Badge
                 bg="danger"
