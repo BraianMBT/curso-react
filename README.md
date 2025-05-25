@@ -1,12 +1,11 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+-## Despliegue en GitHub Pages
 
-Currently, two official plugins are available:
+La aplicación ha sido desplegada en GitHub Pages. Puedes acceder a ella a través del siguiente enlace: https://braianmbt.github.io/curso-react/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Credenciales de inicio de sesión (Fake Login)
 
-## Expanding the ESLint configuration
+Para probar la funcionalidad de inicio de sesión (utilizando un login hardcodeado con fines de demostración), puedes usar las siguientes credenciales:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Usuario:** `admin@mail.com`
+- **Contraseña:** `admin`
