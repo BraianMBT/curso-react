@@ -18,15 +18,6 @@ export default function BoostrapNavbar() {
           </Form>
     )
   }
-  var determinarLogo = () => {
-    var logo = import.meta.env.MODE === 'development' 
-    ? './mercurio_sin_fondo.png' 
-    : '/mercurio_sin_fondo.png';
-    console.log(logo)
-    console.log(import.meta.env.MODE)
-    return logo
-  }
-  const logo = determinarLogo()
   return (
     <Navbar bg="light" variant="ligth" expand="lg">
       <Container fluid={true}>

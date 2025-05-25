@@ -18,7 +18,7 @@ const Login = () => {
 
   const handleLogin = () => {
     if (username === usuarioHardcodeado.correo && password === usuarioHardcodeado.contrasena) {
-      setUsuario(usuarioHardcodeado);
+      setUsuario(usuarioHardcodeado); // Actualizar el estado global del usuario
       navigate('/backoffice'); 
     } else {
       alert('Usuario o contraseña incorrectos'); 
