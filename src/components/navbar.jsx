@@ -22,7 +22,7 @@ export default function BoostrapNavbar() {
   const logoSrc = import.meta.env.MODE === 'development' 
     ? './mercurio_sin_fondo.png' 
     : '/mercurio_sin_fondo.png';
-
+  console.log(logoSrc)
   return (
     <Navbar bg="light" variant="ligth" expand="lg">
       <Container fluid={true}>
