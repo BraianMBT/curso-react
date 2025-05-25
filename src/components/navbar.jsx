@@ -22,6 +22,9 @@ export default function BoostrapNavbar() {
     logo = import.meta.env.MODE === 'development' 
     ? './mercurio_sin_fondo.png' 
     : '/mercurio_sin_fondo.png';
+    console.log(logo)
+    console.log(import.meta.env.MODE)
+    return logo
   }
   const logo = determinarLogo()
   return (
