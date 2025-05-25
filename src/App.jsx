@@ -18,10 +18,9 @@ function App() {
 
   return (
     <GlobalProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/curso-react/">
         <BoostrapNavbar/>
         <Routes>
-          <Route path="curso-react/" element={<ProductosList />} />
           <Route path="/" element={<ProductosList />} />
           <Route path="/ofertas" element={<Ofertas />} />
           <Route path="/backoffice" element={<RutaProtegida element={<Administracion />} />} />
