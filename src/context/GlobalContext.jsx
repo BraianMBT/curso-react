@@ -14,7 +14,7 @@ const agregarAlCarrito = (producto) => {
     const index = prevCarrito.findIndex(item => item.producto.id === producto.id);
     if (index != -1) {
       const nuevoCarrito = [...prevCarrito];
-      nuevaCantidad = nuevoCarrito[index].cantidad + 1
+      var nuevaCantidad = nuevoCarrito[index].cantidad + 1
       nuevoCarrito[index] = {
         ...nuevoCarrito[index],
         cantidad: nuevaCantidad
