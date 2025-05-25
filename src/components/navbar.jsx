@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useGlobalContext } from '../context/GlobalContext';
 import { Link } from 'react-router-dom';
-import logo from '../assets/mercurio_sin_fondo.png'; 
+import logo from '/mercurio_sin_fondo.svg'; 
 
 export default function BoostrapNavbar() {
   const { carrito } = useGlobalContext();
@@ -24,7 +24,7 @@ export default function BoostrapNavbar() {
       <Container fluid={true}>
         <Navbar.Brand style={{ width: '10rem' }}>
           <Link to="/">
-            <Card.Img src={logo} /> 
+            <Card.Img src={logo} style={{ width: '100%' }} /> 
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='navbar-collapse' />
