@@ -27,6 +27,7 @@ function App() {
         <BoostrapNavbar/>
         <Routes>
           <Route path="curso-react/" element={<ProductosList />} />
+          <Route path="/" element={<ProductosList />} />
           <Route path="/ofertas" element={<Ofertas />} />
           <Route path="/backoffice" element={<RutaProtegida element={<Administracion />} />} />
           <Route path="/carrito" element={<Carrito />} />
