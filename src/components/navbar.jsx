@@ -18,17 +18,12 @@ export default function BoostrapNavbar() {
           </Form>
     )
   }
-
-  const logoSrc = import.meta.env.MODE === 'development' 
-    ? './mercurio_sin_fondo.png' 
-    : '/mercurio_sin_fondo.png';
-
   return (
     <Navbar bg="light" variant="ligth" expand="lg">
       <Container fluid={true}>
         <Navbar.Brand style={{ width: '10rem' }}>
           <Link to="/">
-            <Card.Img src={logoSrc} style={{ width: '100%' }} /> 
+            <Card.Img src="./mercurio_sin_fondo.png" style={{ width: '100%' }} /> 
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='navbar-collapse' />
