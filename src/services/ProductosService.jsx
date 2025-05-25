@@ -3,7 +3,6 @@ import axios from 'axios';
 const BASE_URL = 'https://api.escuelajs.co/api/v1/products';
 
 class ProductosService {
-  // Cantidad max de productos para esta api 69
   async getProductos(limit = 10, offset = 0) {
     try {
       const response = await axios.get(BASE_URL, {
