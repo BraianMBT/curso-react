@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
+import { useGlobalContext } from '../context/GlobalContext';
 
-const Login = ({ onLogin }) => {
+const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const { setUsuario } = useGlobalContext();
 
   const usuarioHardcodeado = {
     correo: 'admin@mail.com',
@@ -16,10 +18,9 @@ const Login = ({ onLogin }) => {
 
   const handleLogin = () => {
     if (username === usuarioHardcodeado.correo && password === usuarioHardcodeado.contrasena) {
-      onLogin(true);
+      setUsuario(usuarioHardcodeado);
       navigate('/backoffice'); 
     } else {
-      onLogin(false);
       alert('Usuario o contraseña incorrectos'); 
     }
   };

@@ -32,6 +32,8 @@ function App() {
           <Route path="/backoffice" element={<RutaProtegida element={<Administracion />} />} />
           <Route path="/carrito" element={<Carrito />} />
           <Route path="/login" element={<Login onLogin={manejarLogin} />} />
+          <Route path="*" element={<Navigate to="/" />} /> 
+
         </Routes>
       </BrowserRouter>
     </GlobalProvider>
