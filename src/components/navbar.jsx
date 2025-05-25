@@ -32,7 +32,7 @@ export default function BoostrapNavbar() {
       <Container fluid={true}>
         <Navbar.Brand style={{ width: '10rem' }}>
           <Link to="/">
-            <Card.Img src={logo} style={{ width: '100%' }} /> 
+            <Card.Img src="./mercurio_sin_fondo.png" style={{ width: '100%' }} /> 
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='navbar-collapse' />
