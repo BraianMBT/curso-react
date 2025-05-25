@@ -1,15 +1,16 @@
 import './App.css'
 import BoostrapNavbar from './components/navbar'
 import ProductosList from './components/ProductosList'
+import { GlobalProvider } from './context/GlobalContext'
 
 
 function App() {
 
   return (
-    <>
-    <BoostrapNavbar/>
-    <ProductosList/>
-    </>
+    <GlobalProvider>
+      <BoostrapNavbar/>
+      <ProductosList/>
+    </GlobalProvider>
   )
 }
 
