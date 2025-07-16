@@ -15,7 +15,7 @@ export default function ProductCard({props}){
                 <Card.Title>{title}</Card.Title>
                 <Card.Text>{descripcion_acortada}</Card.Text>
                 <Card.Text>${price}</Card.Text>
-                <Button variant="outline-success" onClick={()=>agregarAlCarrito(producto)}>
+                <Button variant="outline-success" onClick={()=>agregarAlCarrito(producto)} aria-label={`Agregar ${title} al carrito`}>
                     <i className="bi bi-cart text-black size-[3rem]"></i>
                     <span style={{marginLeft: '2px'}}>Agregar al carrito</span>
                 </Button>

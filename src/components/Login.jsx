@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
 import { useGlobalContext } from '../context/GlobalContext';
+import useDocumentTitle from '../utils/useDocumentTitle';
 
 const Login = () => {
+  useDocumentTitle('Iniciar Sesión');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -18,6 +20,7 @@ const Login = () => {
 
   const handleLogin = () => {
     if (username === usuarioHardcodeado.correo && password === usuarioHardcodeado.contrasena) {
+      localStorage.setItem('usuario', JSON.stringify(usuarioHardcodeado));
       setUsuario(usuarioHardcodeado); // Actualizar el estado global del usuario
       navigate('/backoffice'); 
     } else {
