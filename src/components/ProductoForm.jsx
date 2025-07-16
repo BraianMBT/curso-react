@@ -57,7 +57,7 @@ const ProductoForm = ({ productoAEditar, onFormSubmit }) => {
         await ProductosService.createProducto(producto);
         toast.success('Producto creado con éxito.');
       }
-      onFormSubmit(); // Para refrescar la lista de productos
+      onFormSubmit();
     } catch (err) {
       toast.error('Error al guardar el producto. Intente de nuevo.');
       console.error(err);

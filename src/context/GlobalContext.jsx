@@ -47,8 +47,13 @@ const agregarAlCarrito = (producto) => {
     setCarrito([]);
   };
 
+  const logout = () => {
+    setUsuario(null);
+    setCarrito([])
+  };
+
   return (
-    <GlobalContext.Provider value={{ usuario, setUsuario, paginacion, setPaginacion, carrito, setCarrito, productos, setProductos, agregarAlCarrito, eliminarDelCarrito, vaciarCarrito, terminoDeBusqueda, setTerminoDeBusqueda }}>
+    <GlobalContext.Provider value={{ usuario, setUsuario, logout, paginacion, setPaginacion, carrito, setCarrito, productos, setProductos, agregarAlCarrito, eliminarDelCarrito, vaciarCarrito, terminoDeBusqueda, setTerminoDeBusqueda }}>
       {children}
     </GlobalContext.Provider>
   );

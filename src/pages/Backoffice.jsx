@@ -15,7 +15,6 @@ const Backoffice = () => {
   const fetchProductos = async () => {
     try {
       setLoading(true);
-      // Pedimos todos los productos, sin paginación para el backoffice
       const data = await ProductosService.getProductos(100, 0); 
       setProductos(data);
     } catch (error) {
@@ -31,7 +30,7 @@ const Backoffice = () => {
 
   const handleEdit = (producto) => {
     setProductoAEditar(producto);
-    window.scrollTo(0, 0); // Scroll to top to see the form
+    window.scrollTo(0, 0);
   };
 
   const handleDeleteClick = (producto) => {
@@ -45,7 +44,7 @@ const Backoffice = () => {
         await ProductosService.deleteProducto(productoAEliminar.id);
         setShowModal(false);
         setProductoAEliminar(null);
-        fetchProductos(); // Refresh list
+        fetchProductos(); 
       } catch (error) {
         console.error("Error eliminando producto:", error);
       }
@@ -97,8 +96,6 @@ const Backoffice = () => {
           </tbody>
         </Table>
       )}
-
-      {/* Confirmation Modal */}
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Confirmar Eliminación</Modal.Title>

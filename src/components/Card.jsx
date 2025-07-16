@@ -6,7 +6,6 @@ export default function ProductCard({props}){
     const { agregarAlCarrito } = useGlobalContext();
     var {id, title, price, description, images } = {...props}
     var producto = { id, title, price, description, images }
-    console.log(title)
     var descripcion_acortada = LimitarPalabras(description, 15)
     var title = LimitarPalabras(title, 4)
     return (
