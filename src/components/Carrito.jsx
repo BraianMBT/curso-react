@@ -1,11 +1,13 @@
 import React from 'react';
 import { useGlobalContext } from '../context/GlobalContext';
-import { Container, ListGroup, Button, Image } from 'react-bootstrap';
+import { Container, Table, Button, Image } from 'react-bootstrap';
 import useDocumentTitle from '../utils/useDocumentTitle';
 
 export default function Carrito() {
   useDocumentTitle('Carrito de Compras');
   const { carrito, eliminarDelCarrito } = useGlobalContext();
+
+  const total = carrito.reduce((sum, item) => sum + item.cantidad * item.producto.price, 0);
 
   return (
     <Container className="mt-4">
@@ -13,22 +15,41 @@ export default function Carrito() {
       {carrito.length === 0 ? (
         <p>El carrito está vacío.</p>
       ) : (
-        <ListGroup>
-          {carrito.map((item, index) => (
-            <ListGroup.Item key={index} className="d-flex justify-content-between align-items-center">
-              <div className="d-flex align-items-center flex-grow-1"> 
-                <Image src={item.producto.images[0]} thumbnail style={{ width: '80px', marginRight: '15px' }} /> 
-                <div className="d-flex flex-column flex-md-row align-items-md-center"> 
-                  <h5 className="mb-1 mb-md-0 me-md-3">{item.producto.title}</h5>
-                  <p className="mb-1 mb-md-0 me-md-3">Cant: {item.cantidad}</p>
-                  <p className="mb-1 mb-md-0 me-md-3">Precio: ${item.producto.price}</p>
-                  <p className="mb-0">Subtotal: ${item.cantidad * item.producto.price}</p>
-                </div>
-              </div>
-              <Button variant="danger" size="sm" onClick={() => eliminarDelCarrito(item.producto.id)} aria-label={`Eliminar ${item.producto.title} del carrito`}>Eliminar</Button>
-            </ListGroup.Item>
-          ))}
-        </ListGroup>
+        <>
+          <Table striped bordered hover responsive>
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Imagen</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              {carrito.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.producto.title}</td>
+                  <td>
+                    <Image src={item.producto.images[0]} thumbnail style={{ width: '80px' }} />
+                  </td>
+                  <td>${item.producto.price}</td>
+                  <td>{item.cantidad}</td>
+                  <td>${item.cantidad * item.producto.price}</td>
+                  <td>
+                    <Button variant="danger" size="sm" onClick={() => eliminarDelCarrito(item.producto.id)} aria-label={`Eliminar ${item.producto.title} del carrito`}>
+                      Eliminar
+                    </Button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+          <div className="text-end">
+            <h3>Total: ${total.toFixed(2)}</h3>
+          </div>
+        </>
       )}
     </Container>
   );
