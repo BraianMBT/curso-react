@@ -1,12 +1,14 @@
 import { Container, Row, Col, Spinner } from "react-bootstrap"
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import ProductCard from './Card'
 import Paginacion from "./Paginacion"
 import { useGlobalContext } from '../context/GlobalContext';
 import ProductosService from '../services/ProductosService';
+import useDocumentTitle from '../utils/useDocumentTitle';
 
 export default function ProductosList(){
-    const { paginacion, setPaginacion, productos, setProductos } = useGlobalContext();
+    useDocumentTitle('Inicio - Tienda');
+    const { paginacion, setPaginacion, productos, setProductos, terminoDeBusqueda } = useGlobalContext();
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -15,7 +17,7 @@ export default function ProductosList(){
                 setLoading(true);
                 const limit = paginacion.limit || 10;
                 const offset = paginacion.offset || 0;
-                const data = await ProductosService.getProductos(limit, offset);
+                const data = await ProductosService.getProductos(limit, offset, terminoDeBusqueda);
                 setProductos(data);
             } catch (error) {
                 console.error("Error al obtener productos:", error);
@@ -25,7 +27,7 @@ export default function ProductosList(){
         };
 
         fetchProducts();
-    }, [paginacion, setProductos]);
+    }, [paginacion, setProductos, terminoDeBusqueda]);
 
     return (
         <Container style={{marginTop: '1rem'}}>

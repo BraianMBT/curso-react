@@ -1,8 +1,10 @@
 import React from 'react';
 import { useGlobalContext } from '../context/GlobalContext';
 import { Container, ListGroup, Button, Image } from 'react-bootstrap';
+import useDocumentTitle from '../utils/useDocumentTitle';
 
 export default function Carrito() {
+  useDocumentTitle('Carrito de Compras');
   const { carrito, eliminarDelCarrito } = useGlobalContext();
 
   return (
@@ -23,7 +25,7 @@ export default function Carrito() {
                   <p className="mb-0">Subtotal: ${item.cantidad * item.producto.price}</p>
                 </div>
               </div>
-              <Button variant="danger" size="sm" onClick={() => eliminarDelCarrito(item.producto.id)}>Eliminar</Button>
+              <Button variant="danger" size="sm" onClick={() => eliminarDelCarrito(item.producto.id)} aria-label={`Eliminar ${item.producto.title} del carrito`}>Eliminar</Button>
             </ListGroup.Item>
           ))}
         </ListGroup>
